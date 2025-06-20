@@ -1,8 +1,25 @@
 "use server";
 
-export async function drawOmikuji(): Promise<string> {
-    const results = ["大吉", "中吉", "小吉", "末吉", "凶", "大凶"];
-    const random = Math.floor(Math.random() * results.length);
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // 演出
-    return results[random];
+export type Pokemon = {
+    name: string;
+    image: string;
+    types: string[];
+};
+
+export async function getRandomPokemon(): Promise<Pokemon> {
+    const maxId = 1010; // 現在のポケモン数（お好みで調整可能）
+    const randomId = Math.floor(Math.random() * maxId) + 1;
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+
+    if (!res.ok) {
+        throw new Error("ポケモン取得に失敗しました");
+    }
+
+    const data = await res.json();
+
+    return {
+        name: data.name,
+        image: data.sprites.front_default || "",
+        types: data.types.map((t: any) => t.type.name),
+    };
 }

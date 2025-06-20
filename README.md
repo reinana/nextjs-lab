@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧪 Next.js Lab - 100日チャレンジ
+これは#100日チャレンジという本を読んで触発され、私も100日チャレンジすることにしました。仕事、育児があるので1日1個のアプリ作成は物理的に不可能なので、これから100個のアプリを作成していきます。
 
-## Getting Started
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔍 目的
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js 15 (App Router) の機能を体系的に学ぶ
+- 小さなプロジェクトを日々積み上げて実装力を強化
+- 公開された成果物をポートフォリオとして活用する
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📅 Day List
 
-## Learn More
+| Day | タイトル        | 技術要素                                              | デモ                                                                 | コード                                                                                      |
+|-----|------------------|--------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| 01  | ポケモンガチャ   | `useActionState`, `Server Actions`, `startTransition`, `next/image` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day01) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day01) |
 
-To learn more about Next.js, take a look at the following resources:
+> ※ 今後、チャレンジが増えるたびに上の表に追記してください。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 使用技術
 
-## Deploy on Vercel
+- [Next.js 15](https://nextjs.org/docs) (App Router構成)
+- React 19
+- Tailwind CSS
+- TypeScript
+- Server Actions
+- useActionState / revalidatePath / router.replace / 他
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 学習メモ
+
+### Day 01: ポケモンガチャ
+
+- `useActionState` を使う場合、`runAction()` は `startTransition()` 内で呼ぶ必要がある。
+- `next/image` で外部画像を扱うには `next.config.js` に `images.remotePatterns` を設定する。
+- PokeAPI（https://pokeapi.co）から取得したポケモンの名前・画像・タイプを表示。
+
+---
+
+## ✨ 今後の予定
+
+- Day 02: `revalidatePath` を使った投稿・更新後の一覧再取得
+- Day 03: クエリパラメータ連動の検索フィルター (`router.replace`)
+- Day 04: `formAction` + バリデーション付きフォーム
+- Day 05: 非同期セレクトボックス + 検索補完
+
+---
+
+## 📮 お問い合わせ・SNS
+
+- X (Twitter): [@reinana](https://twitter.com/reinana)
+
+---
+
+## 🚀 デモサイト
+
+https://nextjs-lab-psi.vercel.app/
