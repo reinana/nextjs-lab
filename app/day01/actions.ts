@@ -20,6 +20,6 @@ export async function getRandomPokemon(): Promise<Pokemon> {
     return {
         name: data.name,
         image: data.sprites.front_default || "",
-        types: data.types.map((t: any) => t.type.name),
+        types: data.types.map((t: { type: { name: string } }) => t.type.name),
     };
 }
