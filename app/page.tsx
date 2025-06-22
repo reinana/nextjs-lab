@@ -1,9 +1,7 @@
+import { pages } from '@/lib/pages-date'
 import Link from 'next/link'
 
-const pages = [
-    { day: '01', title: 'ポケモンガチャ', path: '/day01' },
-    // 今後はここに追加していく
-]
+
 
 export default function Home() {
     return (
@@ -18,8 +16,9 @@ export default function Home() {
                     {pages.map((p) => (
                         <Link key={p.day} href={p.path}>
                             <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-                                <p className="text-sm text-gray-400">Day {p.day}</p>
-                                <h2 className="text-xl font-semibold text-gray-800 mt-1">{p.title}</h2>
+                                <p className="text-sm text-gray-400 mb-1">Day {p.day} ・ {p.date}</p>
+                                <h2 className="text-xl font-semibold text-gray-800">{p.title}</h2>
+                                <p className="text-sm text-gray-600 mt-2">{p.description}</p>
                                 <span className="inline-block mt-4 text-blue-600 text-sm hover:underline">
                                     → チャレンジを見る
                                 </span>

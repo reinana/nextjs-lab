@@ -3,6 +3,7 @@
 import { useActionState, startTransition } from 'react'
 import { getRandomPokemon, type Pokemon } from './actions'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const initial: Pokemon = {
     name: '？？？',
@@ -36,6 +37,9 @@ export default function Day01() {
                 <p className="text-sm text-gray-600">
                     タイプ: {pokemon.types.map((t) => t).join(' / ') || '???'}
                 </p>
+                <Link href="/" className="mt-6 inline-block text-blue-600 hover:underline text-sm">
+                    ← 一覧に戻る
+                </Link>
             </div>
         </main>
     )
