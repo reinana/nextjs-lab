@@ -33,11 +33,19 @@ export const pages: PageEntry[] = [
             "フォームからポケモン名を入力して検索し、コレクションに追加できる機能を実装。未入力ならランダム取得。",
     },
     {
-    day: "04",
-    title: "DataLoaderによる投稿と著者表示",
-    path: "/day04",
-    date: "2025-06-22",
-    description:
-        "投稿と著者情報をそれぞれのコンポーネントで取得しつつ、DataLoaderとReact.cacheを使ってN+1フェッチを解消。dummyjson APIを活用。",
-}
+        day: "04",
+        title: "DataLoaderによる投稿と著者表示",
+        path: "/day04",
+        date: "2025-06-22",
+        description:
+            "投稿と著者情報をそれぞれのコンポーネントで取得しつつ、DataLoaderとReact.cacheを使ってN+1フェッチを解消。dummyjson APIを活用。",
+    },
+    {
+        day: "05",
+        title: "クッキーでテーマを保存する機能",
+        path: "/day05",
+        date: "2025-06-25",
+        description:
+            "ユーザーが選択したテーマ（ライト/ダーク）をクッキーに保存し、次回以降の表示でもテーマを保持。`cookies()` を使って `html` にクラスを設定し、Tailwind の `dark:` スタイルを切り替える仕組みを実装。",
+    },
 ];
