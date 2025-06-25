@@ -24,4 +24,20 @@ export const pages: PageEntry[] = [
         description:
             "ランダムに取得したポケモンをコレクションに追加し、一覧で表示する機能を実装。useActionStateで状態管理。",
     },
+    {
+        day: "03",
+        title: "ポケモン検索フォーム追加",
+        path: "/day03",
+        date: "2025-06-21",
+        description:
+            "フォームからポケモン名を入力して検索し、コレクションに追加できる機能を実装。未入力ならランダム取得。",
+    },
+    {
+    day: "04",
+    title: "DataLoaderによる投稿と著者表示",
+    path: "/day04",
+    date: "2025-06-22",
+    description:
+        "投稿と著者情報をそれぞれのコンポーネントで取得しつつ、DataLoaderとReact.cacheを使ってN+1フェッチを解消。dummyjson APIを活用。",
+}
 ];
