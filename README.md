@@ -20,6 +20,8 @@
 | 01  | ポケモンガチャ                 | `useActionState`, `Server Actions`, `startTransition`, `next/image`      | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day01) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day01) |
 | 02  | ガチャ + コレクション追加     | `useActionState`, `Server Actions`, コレクションの状態管理               | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day02) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day02) |
 | 03  | フォーム追加による検索機能     | `useActionState`, `Server Actions`, フォーム送信, 条件分岐（ランダム/名前検索） | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day03) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day03) |
+| 04  | DataLoaderによる投稿と著者表示 | `DataLoader`, `React.cache`, `N+1解消`, `dummyjson API`                  | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day04) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day04) |
+| 05  | ダークモード切り替え           | `cookie`, `Server Component`, `Client Component`, `html class="dark"` 対応 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day05) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day05) |
 
 > ※ 今後、チャレンジが増えるたびに上の表に追記してください。
 ---
@@ -55,16 +57,22 @@
 - フォーム未入力ならランダム、入力ありなら名前検索。
 - 重複登録を防ぎながら、取得したポケモンをコレクションとして蓄積。
 
+### Day 04: DataLoaderによる投稿と著者表示
+
+- 投稿リストは `getPosts()`、著者情報は `getUser()` を個別に取得。
+- `DataLoader` + `React.cache()` によって `N+1フェッチ問題` を回避。
+- `dummyjson API` を使って一覧表示と並列データ取得を両立。
+
+### Day 05: ダークモード切り替え
+
+- クライアントコンポーネントでボタンのみを `use client` として定義。
+- サーバーコンポーネントで `cookies()` を利用し、現在のテーマ状態を取得。
+- ボタン押下時に Server Action を呼び出し、`Set-Cookie` ヘッダーでテーマを保存。
+- `html` タグの `className` に `dark` を付与して Tailwind の `dark:` バリアントを適用。
+
+
 ---
 
-## ✨ 今後の予定
-
-- Day 04: `formAction` + バリデーション付きフォーム
-- Day 05: 非同期セレクトボックス + 検索補完
-- Day 06: ローカルストレージ or Cookie への状態保存
-- Day 10: 10個到達時にトップページへページネーション追加（予定）
-
----
 
 ## 📮 お問い合わせ・SNS
 
