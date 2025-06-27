@@ -48,4 +48,12 @@ export const pages: PageEntry[] = [
         description:
             "ユーザーが選択したテーマ（ライト/ダーク）をクッキーに保存し、次回以降の表示でもテーマを保持。`cookies()` を使って `html` にクラスを設定し、Tailwind の `dark:` スタイルを切り替える仕組みを実装。",
     },
+    {
+        day: "06",
+        title: "三目並べ (Tic-Tac-Toe) ゲーム",
+        path: "/day06",
+        date: "2025-07-01", // 今日の日付に合わせて調整
+        description:
+            "React公式チュートリアルを参考に、Next.jsのApp RouterとClient Componentsで実装したシンプルな三目並べゲーム。状態管理とイベントハンドリングを学習。",
+    },
 ];
