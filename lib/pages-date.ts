@@ -56,4 +56,12 @@ export const pages: PageEntry[] = [
         description:
             "React公式チュートリアルを参考に、Next.jsのApp RouterとClient Componentsで実装したシンプルな三目並べゲーム。状態管理とイベントハンドリングを学習。",
     },
+    {
+        day: "07",
+        title: "J-Quants株価データ遅延ロード",
+        path: "/day07",
+        date: "2025-07-02", // 今日の日付に合わせて調整
+        description:
+            "J-Quants APIから株価データを取得する際、useTransitionを使ってUIの応答性を保ち、ローディング中も入力が可能なアプリ。Server Actionsと組み合わせ。",
+    },
 ];

@@ -28,6 +28,7 @@
 | 05 | ダークモード切り替え | `cookie`, `Server Component`, `Client Component`, `html class="dark"` 対応 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day05) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day05) |
 | 06 | **三目並べ (Tic-Tac-Toe) ゲーム** | **`Client Component` (`'use client'`), `useState`, `Immutable Data`, `クロージャ`** | **[🔗 Demo](https://www.google.com/search?q=https://nextjs-lab-psi.vercel.app/day06)** | **[💻 Code](https://www.google.com/search?q=https://github.com/reinana/nextjs-lab/tree/main/app/day06)** |
 
+
 > ※ 今後、チャレンジが増えるたびに上の表に追記してください。
 
 -----
@@ -83,6 +84,13 @@
   * 配列の\*\*`slice()` メソッド**を使って**イミュータブルなデータ更新\*\*を実践しました。
   * JavaScriptの**クロージャ**がコンポーネント内でどのように機能するかを理解しました。
 
+### Day 07: J-Quants株価データ遅延ロード
+
+* `useTransition` フックを使って、時間のかかる非同期処理（今回はJ-Quants APIからのデータ取得）中にUIがブロックされないように実装しました。
+* `isPending` フラグを利用して、トランジションが保留中であることをユーザーに通知するUIを表示しました。
+* J-Quants APIからのデータ取得は **Server Actions** として実装し、APIキーなどの機密情報を安全に扱えるようにしました。
+* `.env.local` ファイルでAPI認証情報を環境変数として管理する方法を学びました。
+* J-Quants APIの無料プランのデータ遅延（12週間）を考慮し、日付範囲の入力を調整しました。
 -----
 
 ## 📮 お問い合わせ・SNS
