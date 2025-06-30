@@ -1,10 +1,12 @@
-ご指定ありがとうございます！先ほどのREADMEの更新内容を、マークダウン形式で整形します。
+-----
+
+ご指定の形式に合わせて、`README.md` の `Day List` と `学習メモ` のセクションに `day08` の情報を追記します。
 
 -----
 
 # 🧪 Next.js Lab - 100日チャレンジ
 
-これは『\#100日チャレンジ』という本を読んで触発され、私も100日チャレンジすることにしました。  
+これは『\#100日チャレンジ』という本を読んで触発され、私も100日チャレンジすることにしました。
 仕事・育児があるので 1日1個のアプリ作成は物理的に不可能ですが、ゆっくりでも確実に 100個のアプリを作成していきます。
 
 -----
@@ -28,7 +30,7 @@
 | 05 | ダークモード切り替え | `cookie`, `Server Component`, `Client Component`, `html class="dark"` 対応 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day05) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day05) |
 | 06 | 三目並べ (Tic-Tac-Toe) ゲーム | `useTransition` (アクション対応), `Server Actions`, `J-Quants API`, 環境変数 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day06) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day06) |
 | 07 | J-Quants株価データ遅延ロード | `Client Component` (`use client`), `useState`, `Immutable Data`, `クロージャ` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day07) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day07) |
-
+| 08 | useActionStateによるTODOリスト | `useActionState`, `Server Actions`, `useRef`, `useEffect`, フォーム処理 | [🔗 Demo](https://www.google.com/search?q=https://nextjs-lab-psi.vercel.app/day08) | [💻 Code](https://www.google.com/search?q=https://github.com/reinana/nextjs-lab/tree/main/app/day08) |
 
 > ※ 今後、チャレンジが増えるたびに上の表に追記してください。
 
@@ -87,11 +89,21 @@
 
 ### Day 07: J-Quants株価データ遅延ロード
 
-* `useTransition` フックを使って、時間のかかる非同期処理（今回はJ-Quants APIからのデータ取得）中にUIがブロックされないように実装しました。
-* `isPending` フラグを利用して、トランジションが保留中であることをユーザーに通知するUIを表示しました。
-* J-Quants APIからのデータ取得は **Server Actions** として実装し、APIキーなどの機密情報を安全に扱えるようにしました。
-* `.env.local` ファイルでAPI認証情報を環境変数として管理する方法を学びました。
-* J-Quants APIの無料プランのデータ遅延（12週間）を考慮し、日付範囲の入力を調整しました。
+  * **`useTransition`** フックを使って、時間のかかる非同期処理（今回はJ-Quants APIからのデータ取得）中にUIがブロックされないように実装しました。
+  * **`isPending`** フラグを利用して、トランジションが保留中であることをユーザーに通知するUIを表示しました。
+  * J-Quants APIからのデータ取得は **Server Actions** として実装し、APIキーなどの機密情報を安全に扱えるようにしました。
+  * `.env.local` ファイルでAPI認証情報を環境変数として管理する方法を学びました。
+  * J-Quants APIの無料プランのデータ遅延（12週間）を考慮し、日付範囲の入力を調整しました。
+
+### Day 08: useActionStateによるTODOリスト
+
+  * **`useActionState`** フックの基本的な使い方を学習し、Server Actionsと連携するフォーム処理に適用しました。
+  * HTMLの `<form>` 要素の `action` プロパティに直接Server Actionを渡すことで、簡潔なフォーム送信ロジックを実装しました。
+  * 非同期アクションの**ローディング状態 (`isPending`)** と、**結果の状態 (`state`)** を効率的に管理できることを確認しました。
+  * **`useRef`** を使ってフォーム要素への直接参照を取得し、送信成功後にネイティブの `form.reset()` メソッドを呼び出して入力フィールドをクリアしました。
+  * **`useEffect`** を利用して、`state` の変化（アクションの成功）をトリガーに、フォームのリセットという**副作用**を実行しました。
+  * 開発環境におけるServer Actionsのインメモリ状態管理の限界（Fast Refreshによるリセット）と、永続的なデータベースの必要性を考察しました。
+
 -----
 
 ## 📮 お問い合わせ・SNS
@@ -105,4 +117,3 @@
 [https://nextjs-lab-psi.vercel.app/](https://nextjs-lab-psi.vercel.app/)
 
 -----
-
