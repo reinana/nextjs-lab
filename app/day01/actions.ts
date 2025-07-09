@@ -7,7 +7,7 @@ export type Pokemon = {
 };
 
 export async function getRandomPokemon(): Promise<Pokemon> {
-    const maxId = 1010; // 現在のポケモン数（お好みで調整可能）
+    const maxId = 1010; // 現在のポケモン数
     const randomId = Math.floor(Math.random() * maxId) + 1;
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
 

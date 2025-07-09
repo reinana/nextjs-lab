@@ -45,6 +45,8 @@
 
 ### Day 01: ポケモンガチャ
 
+Day 01「ポケモンガチャ」は、ユーザーがボタンをクリックするとランダムなポケモンが画面に表示されるゲームです。表示されるポケモンは、PokeAPIから取得した名前、画像、タイプ情報を含みます。
+
   * `useActionState` を使う場合、`runAction()` は `startTransition()` 内で呼ぶ必要があります。
   * `next/image` で外部画像を扱うには `next.config.js` に `images.remotePatterns` を設定します。
   * PokeAPI（[https://pokeapi.co](https://pokeapi.co)）から取得したポケモンの名前・画像・タイプを表示しました。
