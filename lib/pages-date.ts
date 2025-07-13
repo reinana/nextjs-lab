@@ -64,12 +64,20 @@ export const pages: PageEntry[] = [
         description:
             "J-Quants APIから株価データを取得する際、useTransitionを使ってUIの応答性を保ち、ローディング中も入力が可能なアプリ。Server Actionsと組み合わせ。",
     },
-      {
-    day: "08",
-    title: "useActionStateによるTODOリスト",
-    path: "/day08",
-    date: "2025-07-03", // 今日の日付に合わせて調整
-    description:
-      "React 19の**useActionState**フックを活用し、**Server Actions**と連携したフォーム処理を体験するシンプルなTODOリストアプリ。非同期アクションの状態（ローディング、結果）を効率的に管理し、**useRef**と**useEffect**を使ってフォーム送信後のUI操作も実装します。",
-  },
+    {
+        day: "08",
+        title: "useActionStateによるTODOリスト",
+        path: "/day08",
+        date: "2025-07-03", // 今日の日付に合わせて調整
+        description:
+            "React 19の**useActionState**フックを活用し、**Server Actions**と連携したフォーム処理を体験するシンプルなTODOリストアプリ。非同期アクションの状態（ローディング、結果）を効率的に管理し、**useRef**と**useEffect**を使ってフォーム送信後のUI操作も実装します。",
+    },
+    {
+        day: "09",
+        title: "Next.jsで簡易ブログアプリ",
+        path: "/day09",
+        date: "2025-07-04", // 今日の日付は7月4日なのでこちらに調整
+        description:
+            "Next.jsの**Server Components**、**静的サイト生成 (SSG)**、**動的ルーティング**を学び、Markdownファイルをデータソースとしたシンプルなブログアプリを構築。`generateStaticParams`を活用した事前HTML生成と、`lib`ディレクトリでのデータ処理を実装。",
+    },
 ];

@@ -38,6 +38,9 @@ export default function BlogHome() {
                     </ul>
                 </section>
             </div>
+            <Link href="/" className="mt-10 text-blue-600 text-sm hover:underline">
+                ← 一覧に戻る
+            </Link>
         </div>
     );
 }

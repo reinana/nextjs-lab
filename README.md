@@ -24,7 +24,8 @@
 | 05 | ダークモード切り替え | `cookie`, `Server Component`, `Client Component`, `html class="dark"` 対応 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day05) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day05) |
 | 06 | 三目並べ (Tic-Tac-Toe) ゲーム | `useTransition` (アクション対応), `Server Actions`, `J-Quants API`, 環境変数 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day06) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day06) |
 | 07 | J-Quants株価データ遅延ロード | `Client Component` (`use client`), `useState`, `Immutable Data`, `クロージャ` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day07) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day07) |
-| 08 | useActionStateによるTODOリスト | `useActionState`, `Server Actions`, `useRef`, `useEffect`, フォーム処理 | [🔗 Demo](https://www.google.com/search?q=https://nextjs-lab-psi.vercel.app/day08) | [💻 Code](https://www.google.com/search?q=https://github.com/reinana/nextjs-lab/tree/main/app/day08) |
+| 08 | useActionStateによるTODOリスト | `useActionState`, `Server Actions`, `useRef`, `useEffect`, フォーム処理 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day08) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day08) |
+| 09 | Next.jsで簡易ブログアプリ | Server Components, SSG, 動的ルーティング, generateStaticParams, gray-matter, remark | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day09) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day09) |
 
 > ※ 今後、チャレンジが増えるたびに上の表に追記してください。
 
@@ -100,6 +101,14 @@ Day 01「ポケモンガチャ」は、ユーザーがボタンをクリック�
   * **`useEffect`** を利用して、`state` の変化（アクションの成功）をトリガーに、フォームのリセットという**副作用**を実行しました。
   * 開発環境におけるServer Actionsのインメモリ状態管理の限界（Fast Refreshによるリセット）と、永続的なデータベースの必要性を考察しました。
 
+### Day 09: Next.jsで簡易ブログアプリ
+
+* Server Components (async/await): サーバーサイドで直接データを取得し、レンダリングする基本を理解しました。
+* 静的サイト生成 (SSG): generateStaticParams 関数を使って、ビルド時にすべての動的ページを事前にHTMLとして生成する仕組みと、そのパフォーマンス上のメリット（高速表示、SEO）を学びました。
+* 動的ルーティング ([id]): URLのパスパラメータ（例: /day09/first-post の first-post）をコンポーネントで受け取り、それに基づいてコンテンツを表示する方法を実装しました。
+* Markdownファイル処理: gray-matter を使ってMarkdownのフロントマター（メタデータ）と本文を分離し、remark と remark-html を使ってMarkdown本文をHTMLに変換する方法を学びました。
+* データ層の分離 (lib ディレクトリ): データ取得と整形に関するロジックを lib/posts.ts ファイルにカプセル化し、再利用性と保守性を高めました。
+* 日付の整形: date-fns ライブラリと専用のコンポーネントを使って、日付をユーザーフレンドリーな形式で表示する方法を実践しました。
 -----
 
 ## 📮 お問い合わせ・SNS
