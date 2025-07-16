@@ -1,3 +1,9 @@
+-----
+
+承知いたしました。先ほどまでのやり取りで完成したREADMEの内容を、そのままMarkdown形式で提供します。
+
+-----
+
 # 🧪 Next.js Lab - 100日チャレンジ
 
 『\#100日チャレンジ』という本を読んで触発され、私も100日チャレンジすることにしました。
@@ -26,6 +32,7 @@
 | 07 | J-Quants株価データ遅延ロード | `Client Component` (`use client`), `useState`, `Immutable Data`, `クロージャ` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day07) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day07) |
 | 08 | useActionStateによるTODOリスト | `useActionState`, `Server Actions`, `useRef`, `useEffect`, フォーム処理 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day08) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day08) |
 | 09 | Next.jsで簡易ブログアプリ | Server Components, SSG, 動的ルーティング, generateStaticParams, gray-matter, remark | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day09) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day09) |
+| 10 | 履歴書フォームとリアルタイム表示 | `Server Actions`, `Client Components`, フォームの状態管理, リアルタイムプレビュー | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day10) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day10) |
 
 > ※ 今後、チャレンジが増えるたびに上の表に追記してください。
 
@@ -103,12 +110,20 @@ Day 01「ポケモンガチャ」は、ユーザーがボタンをクリック�
 
 ### Day 09: Next.jsで簡易ブログアプリ
 
-* Server Components (async/await): サーバーサイドで直接データを取得し、レンダリングする基本を理解しました。
-* 静的サイト生成 (SSG): generateStaticParams 関数を使って、ビルド時にすべての動的ページを事前にHTMLとして生成する仕組みと、そのパフォーマンス上のメリット（高速表示、SEO）を学びました。
-* 動的ルーティング ([id]): URLのパスパラメータ（例: /day09/first-post の first-post）をコンポーネントで受け取り、それに基づいてコンテンツを表示する方法を実装しました。
-* Markdownファイル処理: gray-matter を使ってMarkdownのフロントマター（メタデータ）と本文を分離し、remark と remark-html を使ってMarkdown本文をHTMLに変換する方法を学びました。
-* データ層の分離 (lib ディレクトリ): データ取得と整形に関するロジックを lib/posts.ts ファイルにカプセル化し、再利用性と保守性を高めました。
-* 日付の整形: date-fns ライブラリと専用のコンポーネントを使って、日付をユーザーフレンドリーな形式で表示する方法を実践しました。
+  * **Server Components (async/await)**: サーバーサイドで直接データを取得し、レンダリングする基本を理解しました。
+  * **静的サイト生成 (SSG)**: `generateStaticParams` 関数を使って、ビルド時にすべての動的ページを事前にHTMLとして生成する仕組みと、そのパフォーマンス上のメリット（高速表示、SEO）を学びました。
+  * **動的ルーティング (`[id]`)**: URLのパスパラメータ（例: `/day09/first-post` の `first-post`）をコンポーネントで受け取り、それに基づいてコンテンツを表示する方法を実装しました。
+  * **Markdownファイル処理**: `gray-matter` を使ってMarkdownのフロントマター（メタデータ）と本文を分離し、`remark` と `remark-html` を使ってMarkdown本文をHTMLに変換する方法を学びました。
+  * **データ層の分離 (`lib` ディレクトリ)**: データ取得と整形に関するロジックを `lib/posts.ts` ファイルにカプセル化し、再利用性と保守性を高めました。
+  * **日付の整形**: `date-fns` ライブラリと専用のコンポーネントを使って、日付をユーザーフレンドリーな形式で表示する方法を実践しました。
+
+### Day 10: 履歴書フォームとリアルタイム表示
+
+  * **Server Actions**: ユーザーが入力した履歴書データを**サーバーサイド**で JSON ファイルとして保存する処理を実装しました。
+  * **Client Components**: 保存されたデータに基づいて、**リアルタイム**に HTML 形式の履歴書プレビューを表示するコンポーネントを構築しました。
+  * **フォームの状態管理**: クライアントサイドでの入力フォームの状態を管理し、Server Actions との連携を通じてデータの送受信を行いました。
+  * これにより、複雑な PDF 生成機能を切り離し、**Next.js の基本機能**であるデータの永続化と、Client/Server Components を組み合わせた UI 構築に焦点を当てた開発を体験しました。
+
 -----
 
 ## 📮 お問い合わせ・SNS

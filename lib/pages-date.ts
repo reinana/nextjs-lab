@@ -80,4 +80,12 @@ export const pages: PageEntry[] = [
         description:
             "Next.jsの**Server Components**、**静的サイト生成 (SSG)**、**動的ルーティング**を学び、Markdownファイルをデータソースとしたシンプルなブログアプリを構築。`generateStaticParams`を活用した事前HTML生成と、`lib`ディレクトリでのデータ処理を実装。",
     },
+    {
+        day: "10",
+        title: "履歴書フォームとリアルタイム表示",
+        path: "/day10",
+        date: "2025-07-17", // 今日の日付
+        description:
+            "ユーザーが入力した履歴書データを**Server Actions**でサーバーサイドに保存し、そのデータを元に**Client Components**でリアルタイムにHTML形式の履歴書プレビューを表示します。フォームの状態管理とServer Actionsの連携を学習します。",
+    },
 ];

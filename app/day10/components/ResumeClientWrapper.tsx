@@ -10,7 +10,7 @@ import {
     QualificationEntry,
 } from '../types/resume'; // 各リストエントリの型もインポート
 import ResumeForm from './ResumeForm';
-// import ResumePreview from './ResumePreview';
+import ResumePreview from './ResumePreview';
 // import PdfDownloadButton from './PdfDownloadButton';
 
 const LOCAL_STORAGE_KEY = 'day10_resume_data'; // localStorageのキーを定義
@@ -53,8 +53,10 @@ export default function ResumeClientWrapper() {
             setResumeData((prevData) => ({
                 ...prevData,
                 // basicInfo はネストされているため、既存のbasicInfoをスプレッドしてから新しい値を適用
+                // basicInfoがundefinedのときのために{}
                 basicInfo: { ...prevData.basicInfo, ...(newData.basicInfo || {}) },
                 // その他のトップレベルのフィールドは直接適用
+                // fromEntries {}に戻す entries [キー、値]の配列に変換
                 ...(Object.fromEntries(
                     Object.entries(newData).filter(([key]) => key !== 'basicInfo')
                 ) as Partial<ResumeData>),
@@ -100,7 +102,7 @@ export default function ResumeClientWrapper() {
             {/* プレビューとダウンロードボタンセクション */}
             <div className="lg:w-1/2 flex flex-col gap-6">
                 <div className="flex-grow p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-y-auto max-h-[80vh] lg:max-h-none">
-                    {/* <ResumePreview resumeData={resumeData} /> */}
+                    <ResumePreview resumeData={resumeData} />
                 </div>
                 <div className="p-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg text-center">
                     {/* <PdfDownloadButton resumeData={resumeData} /> */}

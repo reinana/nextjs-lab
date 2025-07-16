@@ -2,6 +2,8 @@
 import React, { ChangeEvent } from 'react';
 import { ResumeData, EducationEntry, WorkExperienceEntry, QualificationEntry } from '../types/resume';
 import EducationSection from './EducationSection';
+import WorkExperienceSection from './WorkExperienceSection';
+import QualificationSection from './QualificationSection';
 
 // ResumeClientWrapperから渡されるPropsの型定義
 interface ResumeFormProps {
@@ -28,11 +30,11 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ resumeData, onDataChange, onLis
     };
 
     // 数値フィールドの変更をハンドル (例: 年齢、扶養家族数)
-    const handleNumberFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        const numValue = value === '' ? null : Number(value); // 空文字はnull、そうでなければ数値に変換
-        onDataChange({ basicInfo: { ...resumeData.basicInfo, [name]: numValue } });
-    };
+    // const handleNumberFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
+    //     const { name, value } = e.target;
+    //     const numValue = value === '' ? null : Number(value); // 空文字はnull、そうでなければ数値に変換
+    //     onDataChange({ basicInfo: { ...resumeData.basicInfo, [name]: numValue } });
+    // };
 
     // 証明写真のアップロードをハンドル
     const handlePhotoUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -93,18 +95,7 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ resumeData, onDataChange, onLis
                             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 p-2"
                         />
                     </div>
-                    <div>
-                        <label htmlFor="age" className="block text-sm font-medium text-gray-700 dark:text-gray-300">年齢</label>
-                        <input
-                            type="number"
-                            id="age"
-                            name="age"
-                            value={resumeData.basicInfo.age !== null ? resumeData.basicInfo.age : ''}
-                            onChange={handleNumberFieldChange}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 p-2"
-                            min="0"
-                        />
-                    </div>
+
                     <div>
                         <label htmlFor="gender" className="block text-sm font-medium text-gray-700 dark:text-gray-300">性別</label>
                         <select
@@ -293,22 +284,17 @@ const ResumeForm: React.FC<ResumeFormProps> = ({ resumeData, onDataChange, onLis
                 education={resumeData.education} // ★ ここで education プロパティを渡す
                 onListChange={(updatedList) => onListChange('education', updatedList)} // ★ ここで onListChange プロパティを渡す
             />
-            <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-700 dark:text-blue-300 border-b pb-2">学歴</h2>
-                <p className="text-gray-600 dark:text-gray-400">学歴の入力欄は次のステップで追加します。</p>
-            </section>
-
             {/* 職務経歴セクション (今後ここに追加) */}
-            <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-700 dark:text-blue-300 border-b pb-2">職務経歴</h2>
-                <p className="text-gray-600 dark:text-gray-400">職務経歴の入力欄は次のステップで追加します。</p>
-            </section>
+            <WorkExperienceSection
+                workExperience={resumeData.workExperience} // ★ ここで workExperience プロパティを渡す
+                onListChange={(updatedList) => onListChange('workExperience', updatedList)} // ★ ここで onListChange プロパティを渡す
+            />
 
             {/* 資格・免許セクション (今後ここに追加) */}
-            <section>
-                <h2 className="text-2xl font-bold mb-4 text-blue-700 dark:text-blue-300 border-b pb-2">資格・免許</h2>
-                <p className="text-gray-600 dark:text-gray-400">資格・免許の入力欄は次のステップで追加します。</p>
-            </section>
+            <QualificationSection
+                qualifications={resumeData.qualifications} // ★ ここで qualifications プロパティを渡す
+                onListChange={(updatedList) => onListChange('qualifications', updatedList)} // ★ ここで onListChange プロパティを渡す
+            />
         </form>
     );
 };
