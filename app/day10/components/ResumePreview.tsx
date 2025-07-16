@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { ResumeData } from '../types/resume';
+import Image from 'next/image'
 
 interface ResumePreviewProps {
     resumeData: ResumeData;
@@ -61,7 +62,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ resumeData }) => {
                     </div>
                     {photo && (
                         <div className="md:col-span-1 flex justify-center items-center">
-                            <img src={photo} alt="証明写真" className="w-32 h-40 object-cover border border-gray-300 shadow-sm" />
+                            <Image src={photo} alt="証明写真" width={32} height={40} className="w-32 h-40 object-cover border border-gray-300 shadow-sm" />
                         </div>
                     )}
                 </div>
