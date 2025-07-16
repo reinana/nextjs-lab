@@ -14,8 +14,8 @@ export async function generateStaticParams() {
     return paths;
 }
 
-export default async function page({ params }: { params: { id: string } }) {
-    const { id } = params;
+export default async function page({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
     const postData = await getPostData(id)
 
     if (!postData) {
