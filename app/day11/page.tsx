@@ -23,20 +23,29 @@ export default function SkillSheetPage() {
     }
 
     const handleSkillDetailNext = (skills: SkillItem[]) => {
-        setSelectedSkills(skills)
+        setSkillDetails(skills)
         setCurrentStep('projects')
     }
     const handleProjectFormNext = (skills: SkillItem[]) => {
         setSelectedSkills(skills)
         setCurrentStep('preview')
     }
+    const handleBack = () => {
+        if (currentStep === 'details') {
+            setCurrentStep('selection')
+        } else if (currentStep === 'projects') {
+            setCurrentStep('details')
+        } else if (currentStep === 'preview') {
+            setCurrentStep('projects')
+        }
+    }
     
   return (
     <div>
-        {currentStep === 'selection' && (<SkillSelection onNext={handleSkillSelectionNext}/>)}
-        {currentStep === 'details' && (<SkillDetailInput onNext={handleSkillDetailNext}/>)}
-        {currentStep === 'projects' && (<ProjectForm onNext={handleProjectFormNext}/>)}
-        {currentStep === 'preview' && (<SkillSheetPreview skillData={finalSkillSheetData}/>)}
+        {currentStep === 'selection' && (<SkillSelection onNext={handleSkillSelectionNext} />)}
+        {currentStep === 'details' && (<SkillDetailInput initialSkills={selectedSkills} onNext={handleSkillDetailNext} onBack={handleBack}/>)}
+        {currentStep === 'projects' && (<ProjectForm initialSkills={skillDetails} onNext={handleProjectFormNext} onBack={handleBack}/>)}
+        {currentStep === 'preview' && (<SkillSheetPreview skillData={finalSkillSheetData} onBack={handleBack}/>)}
     </div>
   )
 }
