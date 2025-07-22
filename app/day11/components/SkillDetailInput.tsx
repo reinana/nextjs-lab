@@ -32,7 +32,7 @@ export default function SkillDetailInput({ initialSkills, onNext, onBack }: Skil
 
     return (
         <div className='p-8 bg-white shadow-lg rounded-lg'>
-            <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">Step 2: スキルの詳細を入力してください</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-slate-900">Step 2: スキルの詳細を入力してください</h2>
             <p className="mb-6 text-gray-700 text-center">
                 選択した各スキルについて、習熟度と学習期間を記入してください。
             </p>
@@ -109,7 +109,7 @@ export default function SkillDetailInput({ initialSkills, onNext, onBack }: Skil
                 </button>
                 <button
                     onClick={handleNext}
-                    className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="px-6 py-3 bg-slate-600 text-white font-semibold rounded-lg shadow-md hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
                     次へ (スキル詳細入力)
                 </button>
