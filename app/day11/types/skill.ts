@@ -14,34 +14,33 @@ export type SkillItem = {
 
 // 汎用的なプロジェクト経験の型
 export type ProjectExperience = {
-    id: string; // ユニークなID
-    projectName: string; // プロジェクト名
-    period: string; // 期間（例: 2025年1月11日 → 2025年1月26日）
-    overview: string; // 概要
-    techUsedSkillIds: string[]; // このプロジェクトで使用したスキルのIDリスト
-    responsibilities?: string; // 担当した箇所/業務
-    innovations?: string; // 工夫した点
-    achievements?: string; // 成果
-    githubUrl?: string; // GitHubリンク
-    projectUrl?: string; // プロジェクトURL
-    // 必要に応じて追加できる汎用的なフィールド
-    type: "team" | "hackathon" | "personal"; // プロジェクトのタイプを識別
-    teamComposition?: string; // チーム構成
-    organizer?: string; // 主催（ハッカソン向け）
+  // --- 基本情報 ---
+  id: string;               // ユニークなID
+  projectName: string;      // プロジェクト名
+  period: string;           // 期間（例: 2025/01 ~ 2025/03）
+  overview: string;         // 概要
+  type: "team" | "hackathon" | "personal"; // プロジェクトのタイプ
+
+  // --- スキルとリンク ---
+  techUsedSkillIds: string[]; // このプロジェクトで使用したスキルのIDリスト
+  githubUrl?: string;         // GitHubリンク
+  projectUrl?: string;        // プロジェクトURL
+
+  // --- 詳細な経験・成果（★ここを整理）---
+  responsibilities?: string;  // 主な担当業務・役割
+  innovations?: string;       // 工夫した点・技術的な挑戦
+  learnings?: string;         // 成果・学んだこと
+
+  // --- 補足情報 ---
+  teamComposition?: string;   // チーム構成
+  organizer?: string;         // 主催（ハッカソン向け）
 };
 
 export type SkillSheetData = {
-    proficiencyStandard: {
-        level5: string;
-        level4: string;
-        level3: string;
-        level2: string;
-        level1: string;
-    };
     // すべてのスキルを保持するフラットなリストに変更
-    allSkills: SkillItem[];
+    skills: SkillItem[];
     // プロジェクト経験もフラットなリストに
-    projectExperiences: ProjectExperience[];
+    projects: ProjectExperience[];
 };
 
 // 初期スキルの定義（SkillSelection.tsxで使うため、ここに移動）
@@ -601,8 +600,15 @@ export const initialAllSkills: SkillItem[] = [
         relatedProjectIds: [],
     },
     {
-        id: "windowsserver",
-        name: "Windows Server",
+        id: "windows",
+        name: "Windows",
+        proficiency: "",
+        learningPeriod: "",
+        relatedProjectIds: [],
+    },
+    {
+        id: "Mac",
+        name: "Mac",
         proficiency: "",
         learningPeriod: "",
         relatedProjectIds: [],

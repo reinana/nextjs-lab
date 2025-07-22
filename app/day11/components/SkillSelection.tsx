@@ -1,16 +1,24 @@
-// app/day11/components/SkillSelection.tsx
 'use client';
 
-import React, { useState } from 'react';
-import { SkillItem, initialAllSkills, skillCategories } from '../types/skill'; // skillCategoriesをインポート
+import React, { useState, useEffect } from 'react'; // ★ useEffect をインポート
+import { SkillItem, initialAllSkills, skillCategories } from '../types/skill';
 
+// ★ propsの型名を page.tsx に合わせる (initialSelectedSkills -> initialSkills)
 interface SkillSelectionProps {
+    initialSkills: SkillItem[];
     onNext: (selectedSkills: SkillItem[]) => void;
 }
 
-const SkillSelection: React.FC<SkillSelectionProps> = ({ onNext }) => {
-    // initialAllSkills を基に、選択状態を持つステートを初期化
-    const [selectedSkillIds, setSelectedSkillIds] = useState<Set<string>>(new Set());
+const SkillSelection: React.FC<SkillSelectionProps> = ({ initialSkills, onNext }) => {
+    // ★ 親から渡された initialSkills を基に、選択状態のSetを初期化
+    const [selectedSkillIds, setSelectedSkillIds] = useState<Set<string>>(
+        new Set(initialSkills.map(skill => skill.id))
+    );
+
+    // ★ 親から渡される initialSkills が変更されたら、内部の選択状態も同期させる
+    useEffect(() => {
+        setSelectedSkillIds(new Set(initialSkills.map(skill => skill.id)));
+    }, [initialSkills]);
 
     const handleCheckboxChange = (skillId: string) => {
         setSelectedSkillIds(prev => {
@@ -25,7 +33,7 @@ const SkillSelection: React.FC<SkillSelectionProps> = ({ onNext }) => {
     };
 
     const handleNext = () => {
-        // 選択されたスキルのみをフィルタリングして次のステップに渡す
+        // 選択されたIDを基に、マスターデータから完全なSkillItemオブジェクトの配列を作成
         const selectedSkills = initialAllSkills.filter(skill => selectedSkillIds.has(skill.id));
         onNext(selectedSkills);
     };
@@ -38,15 +46,15 @@ const SkillSelection: React.FC<SkillSelectionProps> = ({ onNext }) => {
             </p>
 
             {Object.entries(skillCategories).map(([categoryName, skillIdsInThisCategory]) => (
-                <div key={categoryName} className="mb-8 p-4 shadow-sm rounded-lg bg-gray-50">
+                <div key={categoryName} className="mb-8 p-4 shadow-sm rounded-lg bg-slate-100">
                     <h3 className="text-xl font-bold mb-4 text-slate-900">{categoryName}</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {skillIdsInThisCategory.map(skillId => {
                             const skill = initialAllSkills.find(s => s.id === skillId);
-                            if (!skill) return null; // スキルが見つからない場合はスキップ
+                            if (!skill) return null;
 
                             return (
-                                <label key={skill.id} className="flex items-center space-x-2 p-2 bg-white rounded-md inset-shadow-sm hover:bg-gray-100 cursor-pointer">
+                                <label key={skill.id} className="flex items-center space-x-2 p-2 bg-white  rounded-md inset-shadow-sm hover:bg-gray-100 cursor-pointer">
                                     <input
                                         type="checkbox"
                                         className="form-checkbox h-5 w-5 text-blue-600 rounded"

@@ -1,6 +1,6 @@
------
-
-承知いたしました。先ほどまでのやり取りで完成したREADMEの内容を、そのままMarkdown形式で提供します。
+はい、承知いたしました。
+Day11「スキルシート作成アプリ」の情報を追記した`README.md`を以下に作成しました。
+このままコピーしてご利用いただけます。
 
 -----
 
@@ -28,11 +28,12 @@
 | 03 | フォーム追加による検索機能 | `useActionState`, `Server Actions`, フォーム送信, 条件分岐（ランダム/名前検索） | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day03) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day03) |
 | 04 | DataLoaderによる投稿と著者表示 | `DataLoader`, `React.cache`, `N+1解消`, `dummyjson API` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day04) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day04) |
 | 05 | ダークモード切り替え | `cookie`, `Server Component`, `Client Component`, `html class="dark"` 対応 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day05) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day05) |
-| 06 | 三目並べ (Tic-Tac-Toe) ゲーム | `useTransition` (アクション対応), `Server Actions`, `J-Quants API`, 環境変数 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day06) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day06) |
-| 07 | J-Quants株価データ遅延ロード | `Client Component` (`use client`), `useState`, `Immutable Data`, `クロージャ` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day07) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day07) |
+| 06 | 三目並べ (Tic-Tac-Toe) ゲーム | `useState`, `Client Component`, イミュータブルな更新, `クロージャ` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day06) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day06) |
+| 07 | J-Quants株価データ遅延ロード | `useTransition`, `Server Actions`, `J-Quants API`, 環境変数 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day07) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day07) |
 | 08 | useActionStateによるTODOリスト | `useActionState`, `Server Actions`, `useRef`, `useEffect`, フォーム処理 | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day08) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day08) |
-| 09 | Next.jsで簡易ブログアプリ | Server Components, SSG, 動的ルーティング, generateStaticParams, gray-matter, remark | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day09) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day09) |
+| 09 | Next.jsで簡易ブログアプリ | Server Components, SSG, 動的ルーティング, `generateStaticParams`, `gray-matter`, `remark` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day09) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day09) |
 | 10 | 履歴書フォームとリアルタイム表示 | `Server Actions`, `Client Components`, フォームの状態管理, リアルタイムプレビュー | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day10) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day10) |
+| 11 | スキルシート作成アプリ | `useState`, `useEffect`, `State Lifting`, `動的フォーム`, `コンポーネント分割` | [🔗 Demo](https://www.google.com/search?q=https://nextjs-lab-psi.vercel.app/day11) | [💻 Code](https://www.google.com/search?q=https://github.com/reinana/nextjs-lab/tree/main/app/day11) |
 
 > ※ 今後、チャレンジが増えるたびに上の表に追記してください。
 
@@ -124,6 +125,13 @@ Day 01「ポケモンガチャ」は、ユーザーがボタンをクリック�
   * **フォームの状態管理**: クライアントサイドでの入力フォームの状態を管理し、Server Actions との連携を通じてデータの送受信を行いました。
   * これにより、複雑な PDF 生成機能を切り離し、**Next.js の基本機能**であるデータの永続化と、Client/Server Components を組み合わせた UI 構築に焦点を当てた開発を体験しました。
 
+### Day 11: スキルシート作成アプリ
+
+  * **状態の一元管理（State Lifting）**: 複数の子コンポーネント（各ステップ）で共有される複雑な状態を、単一の親コンポーネント (`page.tsx`) で管理する、Reactの基本的な設計パターンを実践しました。
+  * **動的なフォームとコンポーネント分割**: `useState` と `useEffect` を駆使し、ユーザーの入力に応じて変化する動的なフォームを構築。UIをステップごとにコンポーネントへ分割し、保守性を高めました。
+  * **データ連携**: プロジェクト入力フォームで選択したスキルが、スキル一覧の「関連プロジェクト」に自動で反映されるなど、コンポーネント間でデータを連携させる具体的なロジックを実装しました。
+  * **PDF出力**: `window.print()` と `print:` プレフィックスを活用し、サーバーサイドの処理なしでクライアントサイドのみでプレビュー画面をPDFとして出力する機能を実装しました。
+
 -----
 
 ## 📮 お問い合わせ・SNS
@@ -135,5 +143,3 @@ Day 01「ポケモンガチャ」は、ユーザーがボタンをクリック�
 ## 🚀 デモサイト
 
 [https://nextjs-lab-psi.vercel.app/](https://nextjs-lab-psi.vercel.app/)
-
------
