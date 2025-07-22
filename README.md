@@ -34,6 +34,8 @@ Day11「スキルシート作成アプリ」の情報を追記した`README.md`�
 | 09 | Next.jsで簡易ブログアプリ | Server Components, SSG, 動的ルーティング, `generateStaticParams`, `gray-matter`, `remark` | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day09) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day09) |
 | 10 | 履歴書フォームとリアルタイム表示 | `Server Actions`, `Client Components`, フォームの状態管理, リアルタイムプレビュー | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day10) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day10) |
 | 11 | スキルシート作成アプリ | `useState`, `useEffect`, `State Lifting`, `動的フォーム`, `コンポーネント分割` | [🔗 Demo](https://www.google.com/search?q=https://nextjs-lab-psi.vercel.app/day11) | [💻 Code](https://www.google.com/search?q=https://github.com/reinana/nextjs-lab/tree/main/app/day11) |
+| 12 | useOptimistic いいね機能 | `useOptimistic`, `useFormStatus`, Server Actions, Optimistic UI | [🔗 Demo](https://nextjs-lab-psi.vercel.app/day12) | [💻 Code](https://github.com/reinana/nextjs-lab/tree/main/app/day12) |
+
 
 > ※ 今後、チャレンジが増えるたびに上の表に追記してください。
 
@@ -131,6 +133,11 @@ Day 01「ポケモンガチャ」は、ユーザーがボタンをクリック�
   * **動的なフォームとコンポーネント分割**: `useState` と `useEffect` を駆使し、ユーザーの入力に応じて変化する動的なフォームを構築。UIをステップごとにコンポーネントへ分割し、保守性を高めました。
   * **データ連携**: プロジェクト入力フォームで選択したスキルが、スキル一覧の「関連プロジェクト」に自動で反映されるなど、コンポーネント間でデータを連携させる具体的なロジックを実装しました。
   * **PDF出力**: `window.print()` と `print:` プレフィックスを活用し、サーバーサイドの処理なしでクライアントサイドのみでプレビュー画面をPDFとして出力する機能を実装しました。
+
+### Day 12: useOptimistic いいね機能
+  * **Optimistic UIの実装**: React 19の新フック`useOptimistic`を使い、サーバーの応答を待たずにUIを即時更新する機能を実装。ユーザーの体感速度が劇的に向上することを体験しました。
+  * **`useFormStatus`との連携**: `<form>`とServer Actionの組み合わせで、アクションの実行中は`useFormStatus`が返す`pending`状態を使い、ボタンを自動的に無効化・ローディング表示に切り替えました。
+  * **従来手法との比較**: `useOptimistic`を使う方法と、`useState`で手動でローディング状態を管理する従来の方法を並べて実装し、UIの反応性の違いやコードのシンプルさを比較・学習しました。
 
 -----
 
