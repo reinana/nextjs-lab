@@ -96,4 +96,12 @@ export const pages: PageEntry[] = [
         description:
             "複数ステップのフォームでスキルやプロジェクト経験を入力し、一枚のスキルシートを生成するアプリ。状態を一元管理する親コンポーネントと、propsやコールバックで連携する子コンポーネントで構成。動的なフォームの扱い方や、状態管理のベストプラクティスを学びます。",
     },
+    {
+        day: "12",
+        title: "useOptimistic いいね機能",
+        path: "/day12",
+        date: "2025-07-23",
+        description:
+            "React 19の新フック`useOptimistic`を使い、UIが即座に更新される「いいね」機能を実装。Server Actionsと連携し、ユーザーの体感速度を向上させるOptimistic UIパターンを学びます。",
+    },
 ];
