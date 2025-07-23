@@ -2,6 +2,7 @@ import { revalidatePath } from "next/cache";
 import PostListTraditional from "./components/PostListTraditional";
 import PostListOptimistic from "./components/PostListOptimistic";
 import { Post } from "./types";
+import Link from "next/link";
 
 const posts: Post[] = [
     { id: 1, title: 'Next.jsの基本', likes: 10 },
@@ -59,6 +60,9 @@ export default async function Day12Page() {
                 </section>
 
             </div>
+            <Link href="/" className="mt-10 text-blue-600 text-sm hover:underline">
+                ← 一覧に戻る
+            </Link>
         </main>
     )
 }

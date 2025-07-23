@@ -1,5 +1,6 @@
 // app/day10/page.tsx
 
+import Link from 'next/link';
 import ResumeClientWrapper from './components/ResumeClientWrapper';
 
 export default function ResumePage() {
@@ -16,6 +17,9 @@ export default function ResumePage() {
                 {/* ここにClient Componentを配置し、全てのインタラクティブな機能を含めます */}
                 <ResumeClientWrapper />
             </div>
+            <Link href="/" className="mt-10 text-blue-600 text-sm hover:underline">
+                ← 一覧に戻る
+            </Link>
         </div>
     );
 }

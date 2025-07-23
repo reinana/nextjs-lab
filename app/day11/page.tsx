@@ -6,6 +6,7 @@ import SkillDetailInput from './components/SkillDetailInput'
 import { ProjectExperience, SkillItem, SkillSheetData } from './types/skill'
 import ProjectForm from './components/ProjectForm'
 import SkillSheetPreview from './components/SkillSheetPreview'
+import Link from 'next/link'
 
 type Step = 'selection' | 'details' | 'projects' | 'preview'
 
@@ -90,6 +91,9 @@ export default function SkillSheetPage() {
                 {currentStep === 'projects' && (<ProjectForm initialSkills={skillDetails} initialProjects={projects} onNext={handleProjectFormNext} onBack={handleBack} />)}
                 {currentStep === 'preview' && (<SkillSheetPreview skillData={finalSkillSheetData} onBack={handleBack} />)}
             </div>
+            <Link href="/" className="mt-10 text-blue-600 text-sm hover:underline">
+                ← 一覧に戻る
+            </Link>
         </main>
     )
 }

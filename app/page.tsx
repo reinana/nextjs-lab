@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 
 export default function Home() {
-return (
+    return (
         <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16 px-4 sm:px-8">
             <div className="max-w-3xl mx-auto">
                 <h1 className="text-4xl font-bold mb-4 text-gray-800 dark:text-white">
@@ -14,22 +14,28 @@ return (
                     100日間でNext.jsを徹底的に学ぶチャレンジ型ポートフォリオ
                 </p>
 
-                <div className="grid gap-6 sm:grid-cols-2">
+                <div className="space-y-3">
                     {pages.map((p) => (
-                        <Link key={p.day} href={p.path}>
-                            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-                                <p className="text-sm text-gray-400 dark:text-gray-500 mb-1">
-                                    Day {p.day} ・ {p.date}
-                                </p>
-                                <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
-                                    {p.title}
-                                </h2>
-                                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
-                                    {p.description}
-                                </p>
-                                <span className="inline-block mt-4 text-blue-600 dark:text-blue-400 text-sm hover:underline">
-                                    → チャレンジを見る
-                                </span>
+                        <Link
+                            key={p.day}
+                            href={p.path}
+                            className="block p-4 rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200"
+                        >
+                            <div className="flex items-center justify-between">
+                                {/* 左側のコンテンツ (Day, Title, Description) */}
+                                <div className="flex items-center">
+                                    <span className="flex-shrink-0 w-12 text-center text-xl font-bold text-gray-400 dark:text-gray-500">
+                                        {p.day}
+                                    </span>
+                                    <div className="ml-4">
+                                        <h2 className="font-semibold text-lg text-gray-800 dark:text-white">
+                                            {p.title}
+                                        </h2>
+                                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1 hidden sm:block">
+                                            {p.description}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </Link>
                     ))}
